@@ -8,29 +8,34 @@ benchmarks. Lee primero `README.md` y `LECTURAS.md`.
 
 El alumno ya probó cosas por su cuenta, cada quien a su manera. Tu trabajo es
 ayudarle a escribir **lo que hizo y lo que propone** en la forma común de
-`propuestas/_plantilla.md`, para que el grupo pueda compararlo y repetirlo.
+`plantillas/propuesta.md`, para que el grupo pueda compararlo y repetirlo.
 
 Sigue estos pasos:
 
 1. **Averigua su login de GitHub** (`gh api user --jq .login`, o
    `git remote get-url origin`, o pregúntale). Su carpeta es
-   `propuestas/<login>/`, con las mismas mayúsculas y guiones.
+   `estudiantes/<login>/`, con las mismas mayúsculas y guiones. Ahí vive todo lo
+   suyo (ver `estudiantes/README.md`); si no existe, créala.
 2. **Entrevístalo antes de escribir.** Una pregunta a la vez: qué memorias
    probó, con qué harness y modelo, qué suscripción tiene, qué hizo
    exactamente, qué salió, qué le interesa probar ahora. Si tiene archivos,
    notas, logs o repos de lo que hizo, pídele que te los muestre y léelos.
-3. **Copia la plantilla** a `propuestas/<login>/propuesta.md` y llénala con lo
-   que te dijo y lo que leíste.
+3. **Copia la plantilla** a `estudiantes/<login>/propuesta.md` y llénala con
+   lo que te dijo y lo que leíste. Lo que sirva de evidencia va en
+   `estudiantes/<login>/evidencia/`.
 4. **Usa los ids de la tabla de abajo.** Si algo no está en ella, inventa un id
    en `kebab-case` y anótalo en `ids_nuevos`. Así se homologa.
 5. **Muéstrale el resultado y pídele que lo corrija** antes de hacer commit.
-6. Haz commit en su branch `propuesta-<login>` y ayúdalo a abrir el PR
-   (`propuesta: <login>`).
+6. Se trabaja **por fork y pull request**. Comprueba que `origin` sea el fork
+   del alumno y no `raya-lucaria/memoria-bench`; si clonó el original, ayúdalo
+   a hacer fork (`gh repo fork --remote`). Haz commit en su branch
+   `propuesta-<login>` (nunca en `main`), push a su fork, y ayúdalo a abrir el
+   PR hacia `raya-lucaria/memoria-bench` titulado `propuesta: <login>`.
 
 ## Reglas
 
-- **Escribe solo dentro de `propuestas/<login>/`.** No toques la plantilla, ni
-  las propuestas de otros, ni archivos de la raíz.
+- **Escribe solo dentro de `estudiantes/<login>/`.** No toques `plantillas/`,
+  ni las carpetas de otros, ni archivos de la raíz.
 - **No inventes resultados.** Si el alumno no midió algo, escribe "no medido".
   Si recuerda un número pero no tiene evidencia, escríbelo como "de memoria,
   sin evidencia". Un resultado sin "cómo repetirlo" queda marcado como no

@@ -29,7 +29,18 @@ y armar entre todos un plan.
 
 ## Ronda 1: homologa lo que hiciste
 
-1. Haz fork de este repo y clónalo.
+Se trabaja **por fork y pull request**, igual que en el curso: nadie escribe
+directo en este repo.
+
+1. Haz fork y clona **tu fork**:
+
+   ```bash
+   gh repo fork raya-lucaria/memoria-bench --clone
+   cd memoria-bench
+   ```
+
+   Antes de cada ronda, actualiza tu `main` con lo que ya se mergeó:
+   `git switch main && git pull upstream main && git push`.
 2. Crea tu branch: `git switch -c propuesta-<tu-login>`.
 3. Abre el repo en tu harness y dile:
 
@@ -37,13 +48,16 @@ y armar entre todos un plan.
 
    Si tu harness no lee `AGENTS.md` solo, pídeselo explícitamente. Te va a
    entrevistar, revisar lo que ya tienes y llenar
-   `propuestas/<tu-login>/propuesta.md` a partir de
-   [`propuestas/_plantilla.md`](propuestas/_plantilla.md).
+   `estudiantes/<tu-login>/propuesta.md` a partir de
+   [`plantillas/propuesta.md`](plantillas/propuesta.md).
 4. **Lee lo que escribió antes de subirlo.** El responsable eres tú, no tu IA.
-5. Abre un PR titulado `propuesta: <tu-login>`.
+5. Haz push a tu fork y abre el PR hacia `raya-lucaria/memoria-bench`, titulado
+   `propuesta: <tu-login>` (`git push -u origin propuesta-<tu-login>` y luego
+   `gh pr create`).
 
-Tu carpeta se llama **exactamente como tu login de GitHub**. Solo escribes
-dentro de ella.
+**Todo lo tuyo vive en `estudiantes/<tu-login>/`**, y esa carpeta se llama
+exactamente como tu login de GitHub. Solo escribes dentro de ella. Las reglas
+completas están en [`estudiantes/README.md`](estudiantes/README.md).
 
 ## Después
 
@@ -51,8 +65,9 @@ dentro de ella.
   clase.
 - Homologamos: agrupamos memorias, benchmarks y preguntas, y vemos qué choca y
   qué falta.
-- Lo que haya que decidir se vota: subimos una boleta a `votos/` y cada quien la
-  llena por PR.
+- Lo que haya que decidir se vota: subimos `plantillas/boleta.yaml`, cada quien
+  la copia a `estudiantes/<tu-login>/votos.yaml`, la llena con su harness y abre
+  un PR `votos: <tu-login>`.
 - Con eso queda `plan.md`: qué se mide, cómo, quién se encarga de qué, y qué se
   repite entre varias personas para que el resultado sea robusto.
 
@@ -61,7 +76,7 @@ dentro de ella.
 | Archivo | Para qué |
 |---|---|
 | [`AGENTS.md`](AGENTS.md) | instrucciones para tu IA (`CLAUDE.md` y `GEMINI.md` apuntan aquí) |
-| [`propuestas/_plantilla.md`](propuestas/_plantilla.md) | la forma común de cada propuesta |
+| [`estudiantes/`](estudiantes/README.md) | una carpeta por persona; ahí trabaja cada quien |
+| [`plantillas/`](plantillas/propuesta.md) | la forma común de la propuesta (y luego de la boleta) |
 | [`LECTURAS.md`](LECTURAS.md) | punto de partida común: sistemas, benchmarks, críticas |
-| `votos/` | boletas, a partir de la ronda 2 |
 | `plan.md` | el plan homologado, a partir de la ronda 2 |

@@ -1,5 +1,5 @@
 ---
-# Copia este archivo a propuestas/<tu-login>/propuesta.md y llénalo.
+# Copia este archivo a estudiantes/<tu-login>/propuesta.md y llénalo.
 # Usa los ids de AGENTS.md. Lo que no esté ahí va en ids_nuevos.
 login: ""
 harnesses: []          # p. ej. [claude-code, codex]
@@ -27,7 +27,7 @@ Repite este bloque por cada cosa que probaste.
 - **Benchmark o tarea:** id, o descríbela si fue informal
 - **Qué hice:** en pocas líneas
 - **Qué salió:** números si los hay, con su unidad. Si no mediste: "no medido".
-- **Evidencia:** archivos en `evidencia/`, o "sin evidencia"
+- **Evidencia:** archivos en `estudiantes/<tu-login>/evidencia/`, o "sin evidencia"
 - **Cómo repetirlo:** comandos o pasos exactos para que otra persona llegue a lo
   mismo. Si no se puede, explica por qué.
 - **Qué salió mal o me sorprendió:**
