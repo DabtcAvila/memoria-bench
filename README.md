@@ -7,7 +7,7 @@ Vamos a comparar **sistemas de memoria para agentes LLM** (OptMem, MemPalace,
 Hay dos reglas fijas:
 
 1. **Nadie paga API keys.** Todo corre con la suscripción que ya tienes.
-2. **Todo lo que reportes se tiene que poder repetir.** Un número que nadie más
+2. **Cuando midamos, todo se tiene que poder repetir.** Un número que nadie más
    puede reproducir no cuenta. Como ejemplo, MemPalace anunció 96.6 % en
    LongMemEval y resultó que el número venía casi todo de ChromaDB (ver
    [`LECTURAS.md`](LECTURAS.md)).
@@ -23,11 +23,13 @@ leen el repo → llenan su carpeta → PR → mergeamos → HTML en clase
 → votan por PR → homologamos → plan.md → otra ronda
 ```
 
-Ya probaste cosas por tu cuenta. Esta primera ronda sirve para **homologar**:
-que lo que hizo cada quien quede escrito igual, para poder compararlo, repetirlo
-y armar entre todos un plan.
+Todavía no se ha probado nada. Cada quien hizo su **scouting** por su cuenta:
+memorias, benchmarks e ideas distintas. En esta primera ronda cada quien **sube
+su scouting tal cual** y escribe una propuesta corta y libre. Después
+juntamos todo con agentes, lo homologamos, elegimos los experimentos más
+interesantes y repartimos el trabajo.
 
-## Ronda 1: homologa lo que hiciste
+## Ronda 1: sube tu scouting y tu propuesta
 
 Se trabaja **por fork y pull request**, igual que en el curso: nadie escribe
 directo en este repo.
@@ -44,10 +46,11 @@ directo en este repo.
 2. Crea tu branch: `git switch -c propuesta-<tu-login>`.
 3. Abre el repo en tu harness y dile:
 
-   > Lee AGENTS.md y ayúdame a homologar lo que hice en mi propuesta.
+   > Lee AGENTS.md y ayúdame a subir mi scouting y escribir mi propuesta.
 
    Si tu harness no lee `AGENTS.md` solo, pídeselo explícitamente. Te va a
-   entrevistar, revisar lo que ya tienes y llenar
+   pedir tu scouting, lo va a subir tal cual a
+   `estudiantes/<tu-login>/scouting/` y, platicando contigo, va a escribir
    `estudiantes/<tu-login>/propuesta.md` a partir de
    [`plantillas/propuesta.md`](plantillas/propuesta.md).
 4. **Lee lo que escribió antes de subirlo.** El responsable eres tú, no tu IA.
@@ -61,10 +64,9 @@ completas están en [`estudiantes/README.md`](estudiantes/README.md).
 
 ## Después
 
-- Mergeamos los PRs y armamos un HTML con todas las propuestas para verlo en
-  clase.
-- Homologamos: agrupamos memorias, benchmarks y preguntas, y vemos qué choca y
-  qué falta.
+- Mergeamos los PRs y, con agentes, homologamos todo el scouting: qué memorias
+  y benchmarks salieron, cuáles se repiten, qué choca y qué falta.
+- Armamos un HTML con eso para verlo en clase.
 - Lo que haya que decidir se vota: subimos `plantillas/boleta.yaml`, cada quien
   la copia a `estudiantes/<tu-login>/votos.yaml`, la llena con su harness y abre
   un PR `votos: <tu-login>`.

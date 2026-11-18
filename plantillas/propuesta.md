@@ -1,47 +1,39 @@
 ---
-# Copia este archivo a estudiantes/<tu-login>/propuesta.md y llénalo.
-# Usa los ids de AGENTS.md. Lo que no esté ahí va en ids_nuevos.
+# Copia este archivo a estudiantes/<tu-login>/propuesta.md.
+# Estos campos son lo mínimo para poder juntar las propuestas de todos y repartir
+# trabajo. Si algo no aplica, déjalo vacío. Usa los ids de AGENTS.md cuando
+# encajen; si no, escribe el nombre como tú lo llames.
 login: ""
-harnesses: []          # p. ej. [claude-code, codex]
-modelos: []            # el nombre exacto que reporte tu harness, p. ej. [claude-sonnet-5-5]
-suscripciones: []      # p. ej. ["Claude Pro", "ChatGPT Plus", "Google AI gratis"]
-sistema_operativo: ""  # linux | macos | windows | wsl
-memorias_probadas: []  # ids de sistemas, p. ej. [optmem, claude-md-manual]
-benchmarks_usados: []  # ids, p. ej. [longmemeval, propio-recetas]
-memorias_que_me_interesan: []
-benchmarks_que_propongo: []
-quiero_encargarme_de: []   # texto libre corto, p. ej. ["driver de codex", "benchmark de convenciones"]
-ids_nuevos: []         # - {id: mi-memoria, tipo: vectorial, fuente: https://...}
+harnesses: []            # los que tienes con suscripción, p. ej. [claude-code, codex]
+suscripciones: []        # p. ej. ["Claude Pro", "ChatGPT Plus", "Google AI gratis"]
+sistema_operativo: ""    # linux | macos | windows | wsl
+memorias_investigadas: []
+benchmarks_investigados: []
+quiero_encargarme_de: [] # texto libre corto, p. ej. ["probar OptMem en Codex", "armar un benchmark propio"]
 ---
 
 # Propuesta de <login>
 
-## 1. Lo que hice
+Escribe libre. Estas secciones son una guía, no un formulario.
 
-Repite este bloque por cada cosa que probaste.
+## Mi scouting
 
-### <título corto>
+Qué investigaste y por qué te llamó la atención. Si ya tienes notas,
+documentos o conversaciones con tu IA, súbelos **tal cual** a
+`estudiantes/<tu-login>/scouting/` y aquí solo resume y enlaza.
 
-- **Memoria:** id(s)
-- **Harness y modelo:**
-- **Benchmark o tarea:** id, o descríbela si fue informal
-- **Qué hice:** en pocas líneas
-- **Qué salió:** números si los hay, con su unidad. Si no mediste: "no medido".
-- **Evidencia:** archivos en `estudiantes/<tu-login>/evidencia/`, o "sin evidencia"
-- **Cómo repetirlo:** comandos o pasos exactos para que otra persona llegue a lo
-  mismo. Si no se puede, explica por qué.
-- **Qué salió mal o me sorprendió:**
+## Lo que encontré
 
-## 2. Lo que propongo
+Por cada memoria o benchmark que investigaste, lo que sepas de esto:
 
-- **Qué comparación quiero ver** (memoria × harness × benchmark) y por qué me
-  interesa:
-- **Mi hipótesis:** qué espero que pase, escrita antes de medir.
-- **Benchmark que propongo** (si propones uno): qué mide, cómo se califica sin
-  un LLM de juez y cuántos casos tiene. Debe caber en la cuota de una
-  suscripción.
-- **De qué me quiero encargar:**
+- qué es y cómo funciona, en dos o tres líneas
+- si corre sin API key, solo con tu suscripción
+- qué tan fácil se ve de probar
+- fuente (URL)
 
-## 3. Lo que no sé o me preocupa
+## Experimentos que propongo
 
-## 4. Fuentes
+Qué te gustaría probar o comparar y por qué sería interesante. Si propones un
+benchmark, di qué mediría y cómo sabríamos si salió bien.
+
+## Preguntas y dudas

@@ -25,7 +25,7 @@ mkdir -p estudiantes/<tu-login>
 ```
 estudiantes/<tu-login>/
   propuesta.md     ronda 1, copiada de plantillas/propuesta.md
-  evidencia/       logs, salidas, notas de lo que corriste (saneado, < ~1 MB)
+  scouting/        tu investigación tal cual: notas, docs, conversaciones (< ~5 MB)
   votos.yaml       ronda 2, copiada de plantillas/boleta.yaml cuando exista
   …                lo que quieras: notebooks, scripts, notas
 ```
