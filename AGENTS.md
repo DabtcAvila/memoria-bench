@@ -25,8 +25,17 @@ reparte el trabajo.
    qué le llamó la atención, qué experimento le gustaría ver, de qué se quiere
    encargar.
 4. **Copia `plantillas/propuesta.md`** a `estudiantes/<login>/propuesta.md` y
-   llénala. Los campos de arriba son lo mínimo; el cuerpo es libre. Las
-   secciones son una guía, no un formulario: si algo no aplica, se omite.
+   llénala. Tiene dos partes:
+   - **La parte estándar** (el bloque YAML de arriba) es igual para todos y
+     **se llena completa**: una entrada por cada memoria y cada benchmark que
+     aparezca en su scouting, una por cada experimento que proponga, y sus
+     roles. Usa exactamente los valores permitidos que dice cada comentario
+     (`si | no | no-se`, `facil | media | dificil`, los roles de la lista). Si
+     no se sabe algo, `no-se`; nunca lo dejes en blanco ni lo inventes. Un
+     experimento es **una pregunta que se pueda contestar midiendo** e incluye
+     su baseline. Revisa que el YAML sea válido.
+   - **La parte libre** (el Markdown de abajo) es libre. Las secciones son una
+     guía: si algo no aplica, se omite.
 5. **Muéstrale el resultado y pídele que lo corrija** antes de hacer commit.
 6. Se trabaja **por fork y pull request**. Comprueba que `origin` sea el fork
    del alumno y no `raya-lucaria/memoria-bench`. Si clonó el original, ayúdalo

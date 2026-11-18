@@ -25,7 +25,10 @@ leen el repo → llenan su carpeta → PR → mergeamos → HTML en clase
 
 Todavía no se ha probado nada. Cada quien hizo su **scouting** por su cuenta:
 memorias, benchmarks e ideas distintas. En esta primera ronda cada quien **sube
-su scouting tal cual** y escribe una propuesta corta y libre. Después
+su scouting tal cual** y escribe una propuesta con dos partes: una **estándar**,
+igual para todos (memorias, benchmarks, experimentos y qué rol quieres), para
+poder acordar qué hacemos y repartir el trabajo con claridad; y una **libre**
+para todo lo demás. Después
 juntamos todo con agentes, lo homologamos, elegimos los experimentos más
 interesantes y repartimos el trabajo.
 
