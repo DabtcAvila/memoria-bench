@@ -253,96 +253,76 @@ disponibilidad: media
 
 ## Mi scouting
 
-Busqué qué benchmarks de memoria existen, qué puntaje saca cada sistema, quién
-lo midió y qué hay con los modelos de hoy (17-nov-2026). Está tal cual en
+Busqué qué benchmarks de memoria existen, qué puntaje saca cada sistema y quién
+lo midió, con los modelos de hoy (17-nov-2026). Está tal cual en
 [`scouting/`](scouting/):
 
 | Archivo | Qué es |
 |---|---|
-| [`numeros.html`](scouting/numeros.html) | 492 cifras en una tabla con filtros. Se abre en el navegador |
-| [`informes/`](scouting/informes/) | Los cinco reportes originales de la búsqueda, con el enlace de cada cifra |
-| [`medir.py`](scouting/medir.py) | Script que mide cómo se usa la memoria de Claude Code. Solo lee archivos |
-| [`medicion-uso-real-2026-11-17.json`](scouting/medicion-uso-real-2026-11-17.json) | Su resultado en mi máquina, con los proyectos sin nombre |
+| [`numeros.html`](scouting/numeros.html) | 492 cifras en una tabla con filtros |
+| [`informes/`](scouting/informes/) | Los cinco reportes de la búsqueda, con el enlace de cada cifra |
+| [`medir.py`](scouting/medir.py) | Mide cómo se usa la memoria de Claude Code. Solo lee archivos |
+| [`medicion-uso-real-2026-11-17.json`](scouting/medicion-uso-real-2026-11-17.json) | Su resultado en mi máquina |
 
-Nadie ha corrido ningún benchmark. Lo único que medí yo es el uso real de la
-memoria en mi máquina; lo demás son cifras de otros.
+Nadie ha corrido ningún benchmark. Yo solo medí el uso real de la memoria en mi
+máquina; lo demás son cifras de otros.
 
 ## Lo que encontré
 
-**Las cifras hay que comprobarlas.** La búsqueda las hizo una IA que leyó cada
-página resumida. En los informes, `[P]` o `[V]` es «leído en la página» y `[S]`
-es «solo visto en un resultado de búsqueda». Casi todos los puntajes los
-reporta el propio vendedor.
+**Las cifras hay que comprobarlas.** Las buscó una IA leyendo resúmenes de cada
+página, y casi todas las reporta el propio vendedor.
 
-**LoCoMo ya no sirve para comparar sistemas**
-(<https://github.com/dial481/locomo-audit>):
-
-- 99 de sus 1,540 respuestas correctas están mal.
-- Su juez automático aceptó 63 % de respuestas falsas.
-- Un modelo sin memoria, con toda la conversación a la vista, sacó 92.6 %.
+**LoCoMo ya no sirve para comparar**
+([auditoría](https://github.com/dial481/locomo-audit)): 99 de sus 1,540
+respuestas correctas están mal, y un modelo sin memoria sacó 92.6 %.
 
 **Cuando mide alguien sin producto que vender, lo simple empata o gana.**
 
 | Estudio | Resultado |
 |---|---|
-| [MemoryAgentBench](https://arxiv.org/html/2507.05257v3), 2025 | Búsqueda por palabras 41.5, Mem0 21.1, Zep 24.0 |
-| [VibeMemBench](https://arxiv.org/html/2609.23570), sep-2026 | En 11 de 12 pruebas, el agente con un producto de memoria resolvió menos que sin memoria |
-| [MemoryTax](https://arxiv.org/abs/2610.29823), oct-2026, Opus 5.5 | Claude Code con el historial en un archivo 97 %, Mem0 95 %, Zep 87 % |
-| [CoReMem](https://arxiv.org/abs/2611.17316), nov-2026, Opus 5.5 | Sin memoria 38.5 %, Mem0 39.6 %, historial completo 40.6 % |
+| [MemoryAgentBench](https://arxiv.org/html/2507.05257v3), 2025 | Búsqueda por palabras 41.5, Mem0 21.1 |
+| [VibeMemBench](https://arxiv.org/html/2609.23570), sep-2026 | En 11 de 12 pruebas, el producto de memoria resolvió menos que no tener memoria |
+| [MemoryTax](https://arxiv.org/abs/2610.29823), oct-2026 | Claude Code con el historial en un archivo 97 %, Mem0 95 % |
+| [CoReMem](https://arxiv.org/abs/2611.17316), nov-2026 | Sin memoria 38.5 %, Mem0 39.6 % |
 
-**Cargar más texto fijo cuesta y no mejora.** Con un AGENTS.md generado, el
-costo sube 20 a 23 % y el acierto cambia entre −2.0 y +2.4 puntos
-(<https://arxiv.org/html/2602.11988>).
+**El modelo pesa más que la memoria.** En MemoryTax, Claude Code va de 29 % a
+97 % solo por cambiar de modelo.
 
-**El modelo pesa más que la memoria.** En MemoryTax, el mismo harness va de
-29 % a 97 % solo por cambiar de modelo.
+**Faltan datos.** GPT-6.2 salió hoy sin ninguna medición de memoria. OptMem no
+tiene ninguna evaluación publicada.
 
-**Faltan datos con los modelos de hoy.** GPT-6.2 salió hoy y no tiene ninguna
-medición de memoria. OptMem no tiene ninguna evaluación publicada.
-
-**Mi uso real** (183 sesiones, del 15-oct al 17-nov-2026):
+**Mi uso real** (183 sesiones, 15-oct al 17-nov-2026):
 
 | Métrica | Valor |
 |---|---|
 | Sesiones que leyeron la memoria de otro proyecto | 14 de 183 (7.7 %) |
-| Tamaño de un índice único con todas las memorias | 160 KB; Claude Code solo carga 25 KB |
+| Índice único con todas las memorias | 160 KB; Claude Code carga 25 KB |
 | Texto cargado al abrir una sesión | 62,630 tokens (mediana) |
-| Memorias que se abrieron al menos una vez | 330 de 605, como mínimo |
 
-El script cuenta lo que el agente buscó. No cuenta lo que le faltó y no buscó.
-
-**De qué desconfío:** del 73.3 % de FrontierMemory (lo publica Letta y gana su
-producto), de los 98 % de vendedores nuevos, y de mis propias tablas hasta que
-alguien repita las cifras desde la fuente.
+El script cuenta lo que el agente buscó, no lo que le faltó y no buscó.
 
 ## Experimentos que propongo
 
 **Un benchmark propio, `propio-continuidad`.** Los públicos preguntan
-«¿recuerdas el dato?». Este pregunta «¿puedes continuar el trabajo?».
+«¿recuerdas el dato?»; este pregunta «¿puedes continuar el trabajo?».
 
-- **Preguntas:** 20, con respuesta que solo está en la memoria. 10 dentro de un
-  proyecto y 10 que cruzan proyectos, sobre proyectos inventados que cualquiera
-  pueda descargar.
-- **Calificación:** un script compara con la respuesta correcta. Sin juez
-  automático.
-- **Se mide:** aciertos, datos que faltaron, pasos hasta el primer dato
-  correcto, tokens y tiempo.
+- **Preguntas:** 20, cuya respuesta solo está en la memoria. 10 dentro de un
+  proyecto y 10 que cruzan proyectos, sobre proyectos inventados.
+- **Calificación:** un script compara con la respuesta correcta.
+- **Se mide:** aciertos, datos que faltaron, tokens y tiempo.
 - **Tamaño:** 180 corridas (20 preguntas × 3 formas de memoria × 3
   repeticiones).
-- **Sirve para cualquier harness:** la memoria es una carpeta de texto.
 
-**Cuándo gana una memoria:** si sube los aciertos más de 5 puntos sin cargar
-20 % más de texto al abrir la sesión. Es mi propuesta; se ajusta al homologar.
+**Una memoria gana** si sube los aciertos más de 5 puntos sin cargar 20 % más
+de texto al abrir la sesión.
 
-**Por dónde empezar:** repetir MemoryTax con suscripción (experimento 3). Son
-152 preguntas, compara harness entre sí y daría la primera cifra de OptMem. Yo
-solo tengo Claude Code; Codex y Gemini CLI los tendría que correr alguien más.
+**Empezaría por** repetir MemoryTax con suscripción: 152 preguntas, y daría la
+primera cifra de OptMem. Solo tengo Claude Code; Codex y Gemini CLI los correría
+alguien más.
 
 ## Preguntas y dudas
 
-- ¿Cuántas corridas aguanta una suscripción antes del límite? No lo he medido.
-- ¿Calificamos LoCoMo contra la clave ya corregida, sin juez automático?
+- ¿Cuántas corridas aguanta una suscripción antes del límite?
 - ¿Fijamos un modelo por harness para todo el grupo? Sin eso, las cifras no se
   pueden comparar.
-- `medir.py` solo lee el formato de Claude Code. ¿Alguien adapta uno para Codex
-  o Gemini CLI?
+- ¿Alguien adapta `medir.py` para Codex o Gemini CLI?
